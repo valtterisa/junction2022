@@ -1,3 +1,4 @@
+import json
 import pandas as pd
 from matplotlib import pyplot as plt
 from datetime import date, timedelta, datetime
@@ -36,7 +37,26 @@ def GetDataAPI(url):
     # Valitaan vain kolme saraketta
 
     return df_kulutus_filt.values.tolist(), df_kulutus
-    
+
+def varFromJSON(filename):
+    # open file object
+    file = open("path/to/file")
+
+    # load data from file
+    data = json.load(file)
+
+    # get specific data from JSON response
+    charging_time = data["minute"] # duration
+    time_window = data["time"] # interval
+
+    # create list for items    
+    data_list = []
+
+    # add items to list
+    data_list.append(charging_time, time_window)
+
+    return data_list
+
 def ChargingTime(interval, duration, arr):
     """
     Params:

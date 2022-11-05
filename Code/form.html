@@ -9,7 +9,27 @@
                 var k = {minute : minuteValue, time : timeValue}
                 let txt = JSON.stringify(k, null, 2).replace(/\"/g, " ");
                 console.log(txt);
-                return k
+                
+                const fs = require('fs');
+                            
+                // create a JSON object
+                const user = {
+                    "id": 1,
+                    "name": "John Doe",
+                    "age": 22
+                };
+                
+                // convert JSON object to string
+                const data = JSON.stringify(user);
+                
+                // write JSON string to a file
+                fs.writeFile('user.json', data, (err) => {
+                    if (err) {
+                        throw err;
+                    }
+                    console.log("JSON data is saved.");
+                });
+                
             }
         </script>
     </head>
@@ -20,7 +40,7 @@
                 </tr>
 
                 <tr>
-                    <td><label for="charge">At which time the charging starts? </label></td>
+                    <td><label for="charge">Time window where device need to be charged </label></td>
                     <td><input type="time" id="appt" name="appt" min="00:00" max="23:59" required></td>
                 </tr>
                
