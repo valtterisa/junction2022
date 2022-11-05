@@ -40,11 +40,11 @@ def GetDataAPI(url):
 
 def varFromJSON():
     # open file object
-    file = open("../data.json")
+    file = open("./Data/data.json")
 
     # load data from file
     data = json.load(file)
-
+    
     # get specific data from JSON response
     charging_time = data["minute"] # duration
     time_window = data["time"] # interval
@@ -53,11 +53,13 @@ def varFromJSON():
     data_list = []
 
     # add items to list
-    data_list.append(charging_time, time_window)
+    data_list.append(charging_time)
+    data_list.append(time_window)
 
     return data_list
 
 def ChargingTime(interval, duration, arr):
+
     """
     Params:
     interval = int
@@ -88,10 +90,10 @@ def ChargingTime(interval, duration, arr):
                 sum = sum + j[2]
 
             window_avg = round(sum / duration, 3)
-                
+            
             if (len(arr) - 1) > i + duration:
                 avgs.append([arr[i][0], arr[i + duration][1], window_avg])
-
+        
     # Find min average and select the starting duration to achieve that
     min_avg = [float('inf'), "", ""]
     for k in avgs:
@@ -106,7 +108,7 @@ def ChargingTime(interval, duration, arr):
 def FindChargingTime(list,df, kesto, intervalli):
 
     output = ChargingTime(intervalli, kesto, list)
-    
+
     plt.rcParams["figure.figsize"] = [8, 4]
     plt.rcParams["figure.autolayout"] = True
     plt.rcParams["figure.dpi"] = 150
@@ -128,8 +130,8 @@ def FindChargingTime(list,df, kesto, intervalli):
     return output
 
 data, df = GetDataAPI(url_166)
-
-result = FindChargingTime(data,df, varFromJSON()[0], varFromJSON()[1])
+data1 = varFromJSON()
+result = FindChargingTime(data,df, data1[0], data1[1])
 res = pd.DataFrame(result)
 res.to_csv("outputs/result.csv", header=True)
 print(result[1])
