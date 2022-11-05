@@ -7,25 +7,17 @@
                 timeValue = document.getElementById("appt").value;
 
                 var k = {time : timeValue, minute : minuteValue}
-                let txt = JSON.stringify(k, null, 2).replace(/\"/g, " ")
+                const txt = JSON.stringify(k, null, 2).replace(/\"/g, " ")
                 console.log(txt)
-                return k
-
-                const fs = require("fs");
-                var data = fs.readFileSync("data.json");
-                var myObject = JSON.parse(txt);
-
-                let newData = {
-                    time : timeValue,
-                    minute : minuteValue
-                  };
-
-                myObject.push(newData);
-
-                fs.writeFile("data.json", txt, (err) => {
-                    if (err) throw err;
-                    console.log("New data added");
-                });
+                
+                const fs = require('fs');
+                fs.writeFile('./data.json', txt, err => {
+                    if (err) {
+                        console.log('Error writing file', err)
+                    } else {
+                        console.log('Successfully wrote file')
+                    }
+                })
             }
         </script>
     </head>
