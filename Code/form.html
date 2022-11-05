@@ -3,7 +3,14 @@
     <head>
         <script>
             function submit() {
+                console.log("hello world")
+                minuteValue = document.getElementById("minuutti").value;
+                timeValue = document.getElementById("appt").value;
 
+                var k = {time : timeValue, minute : minuteValue}
+                let txt = JSON.stringify(k, null, 2).replace(/\"/g, " ");
+                console.log(txt);
+                return k
             }
         </script>
     </head>
@@ -12,14 +19,12 @@
             <table>
                 <tr>
                     <td><label for="charge">Charging time of the device in minutes: </label></td>
-                    <td><input type="text" name="vuosi"> <br></td>
+                    <td><input type="text" name="vuosi" id="minuutti"> <br></td>
                 </tr>
 
                 <tr>
-                    <td><label for="harrastukset">At which time the charging starts? </label></td>
-                  	<td><input type="date" id="start" name="trip-start" value="2022-11-05" min="1970-01-01" max="2022-11-05"></td>
+                    <td><label for="charge">At which time the charging starts? </label></td>
                     <td><input type="time" id="appt" name="appt" min="00:00" max="23:59" required></td>
-                        
                 </tr>
                
                 <tr>
