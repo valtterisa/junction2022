@@ -6,7 +6,7 @@
                 minuteValue = document.getElementById("minuutti").value;
                 timeValue = document.getElementById("appt").value;
 
-                var k = {time : timeValue, minute : minuteValue}
+                var k = {minute : minuteValue, time : timeValue}
                 let txt = JSON.stringify(k, null, 2).replace(/\"/g, " ");
                 console.log(txt);
                 return k
