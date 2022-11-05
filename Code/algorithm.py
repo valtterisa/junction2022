@@ -38,9 +38,9 @@ def GetDataAPI(url):
 
     return df_kulutus_filt.values.tolist(), df_kulutus
 
-def varFromJSON(filename):
+def varFromJSON():
     # open file object
-    file = open("path/to/file")
+    file = open("../data.json")
 
     # load data from file
     data = json.load(file)
@@ -129,7 +129,7 @@ def FindChargingTime(list,df, kesto, intervalli):
 
 data, df = GetDataAPI(url_166)
 
-result = FindChargingTime(data,df, varFromJSON[0], varFromJSON[1])
+result = FindChargingTime(data,df, varFromJSON()[0], varFromJSON()[1])
 res = pd.DataFrame(result)
 res.to_csv("outputs/result.csv", header=True)
 print(result[1])
