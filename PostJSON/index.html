@@ -11,12 +11,12 @@
                 console.log(txt)
                 
                 const fs = require('fs');
-                fs.writeFile('./data.json', txt, err => {
-                    if (err) {
-                        console.log('Error writing file', err)
-                    } else {
-                        console.log('Successfully wrote file')
-                    }
+                // write JSON string to a file
+                fs.writeFile('Data\data.json', txt, err => {
+                if (err) {
+                    throw err
+                }
+                console.log('JSON data is saved.')
                 })
             }
         </script>
