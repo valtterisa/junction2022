@@ -10,14 +10,8 @@
                 const txt = JSON.stringify(k, null, 2).replace(/\"/g, " ")
                 console.log(txt)
                 
-                const fs = require('fs');
-                fs.writeFile('./data.json', txt, err => {
-                    if (err) {
-                        console.log('Error writing file', err)
-                    } else {
-                        console.log('Successfully wrote file')
-                    }
-                })
+                const FileSystem = require("fs");
+                FileSystem.writeFile('data.json', txt, (err) => {  if (err) throw err; });
             }
         </script>
     </head>
