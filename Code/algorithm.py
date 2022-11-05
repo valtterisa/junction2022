@@ -4,7 +4,7 @@ from matplotlib import pyplot as plt
 from datetime import date, timedelta, datetime
 
 start_time = date.today()
-end_time = start_time + timedelta(days=7)
+end_time = start_time + timedelta(days=1)
 
 start_time = str(datetime.strftime(start_time, "%Y-%m-%d"))
 end_time = str(datetime.strftime(end_time, "%Y-%m-%d"))
@@ -40,7 +40,7 @@ def GetDataAPI(url):
 
 def varFromJSON():
     # open file object
-    file = open("../data.json")
+    file = open("./Data/data.json")
 
     # load data from file
     data = json.load(file)
@@ -53,7 +53,8 @@ def varFromJSON():
     data_list = []
 
     # add items to list
-    data_list.append(charging_time, time_window)
+    data_list.append(charging_time)
+    data_list.append(time_window)
 
     return data_list
 
