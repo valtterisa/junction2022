@@ -10,15 +10,6 @@
                 let txt = JSON.stringify(k, null, 2).replace(/\"/g, " ");
                 console.log(txt);
                 
-                const fs = require('fs');
-                            
-                // create a JSON object
-                const user = {
-                    "id": 1,
-                    "name": "John Doe",
-                    "age": 22
-                };
-                
                 // convert JSON object to string
                 const data = JSON.stringify(user);
                 
@@ -40,7 +31,7 @@
                 </tr>
 
                 <tr>
-                    <td><label for="charge">Time window where device need to be charged </label></td>
+                    <td><label for="charge">What time does the battery need to be charged? </label></td>
                     <td><input type="time" id="appt" name="appt" min="00:00" max="23:59" required></td>
                 </tr>
                

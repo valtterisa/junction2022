@@ -104,7 +104,7 @@ def ChargingTime(interval, duration, arr):
     return min_avg
 
 def FindChargingTime(list,df, kesto, intervalli):
-    
+
     output = ChargingTime(intervalli, kesto, list)
     
     plt.rcParams["figure.figsize"] = [8, 4]
@@ -129,7 +129,7 @@ def FindChargingTime(list,df, kesto, intervalli):
 
 data, df = GetDataAPI(url_166)
 
-result = FindChargingTime(data,df, 400, 100)
+result = FindChargingTime(data,df, varFromJSON[0], varFromJSON[1])
 res = pd.DataFrame(result)
 res.to_csv("outputs/result.csv", header=True)
 print(result[1])
