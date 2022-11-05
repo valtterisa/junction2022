@@ -122,10 +122,14 @@ def FindChargingTime(list,df, kesto, intervalli):
 
     plt.ylabel("Kulutusennuste")
     plt.legend()
+    plt.savefig("outputs/fig.png")
     plt.show()
 
-    return str(output[1])
+    return output
 
 data, df = GetDataAPI(url_166)
 
-FindChargingTime(data,df, 400, 100)
+result = FindChargingTime(data,df, 400, 100)
+res = pd.DataFrame(result)
+res.to_csv("outputs/result.csv", header=True)
+print(result[1])
