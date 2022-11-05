@@ -11,8 +11,21 @@
                 console.log(txt)
                 return k
 
-                var fs = require('k');
-                fs.writeFile("userdata.json", txt);
+                const fs = require("fs");
+                var data = fs.readFileSync("data.json");
+                var myObject = JSON.parse(txt);
+
+                let newData = {
+                    time : timeValue,
+                    minute : minuteValue
+                  };
+
+                myObject.push(newData);
+
+                fs.writeFile("data.json", txt, (err) => {
+                    if (err) throw err;
+                    console.log("New data added");
+                });
             }
         </script>
     </head>
