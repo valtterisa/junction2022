@@ -8,7 +8,11 @@
 
                 var k = {time : timeValue, minute : minuteValue}
                 let txt = JSON.stringify(k, null, 2).replace(/\"/g, " ")
+                console.log(txt)
                 return k
+
+                var fs = require('k');
+                fs.writeFile("userdata.json", txt);
             }
         </script>
     </head>
