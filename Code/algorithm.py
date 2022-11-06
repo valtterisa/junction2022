@@ -75,7 +75,7 @@ def ChargingTime(interval, duration, arr):
     avgs = []
     duration = round(duration / 5)
     interval = round(interval / 5)
-        # Calculates averages
+    # Calculates averages
     for i in range(len(arr) - duration + 1):
         t1 = arr[i][0]
         t2 = arr[i][1]
@@ -97,12 +97,10 @@ def ChargingTime(interval, duration, arr):
     # Find min average and select the starting duration to achieve that
     min_avg = [float('inf'), "", ""]
     for k in avgs:
-        
         if min_avg[0] > k[2]:
             min_avg[0] = k[2]
             min_avg[1] = k[0]
             min_avg[2] = k[1]
-
     return min_avg
 
 def FindChargingTime(list,df, kesto, intervalli):
