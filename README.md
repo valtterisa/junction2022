@@ -1,2 +1,2 @@
 # junction2022
-serverit isolla kirkolla
+Hackathon code made in 36 hours. 
