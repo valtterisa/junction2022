@@ -9,3 +9,5 @@ The algorithm uses forecast provided by Fingrid on electricity consumption as a 
 For example, the use of electricity is high, especially in the evenings. The algorithm considers the best time to charge the batteries during the day, when the demand stabilizes in the evening, and then the price of electricity stays under control. The application also looks at the best time to regulate the operation of rechargeable devices. An example of this could be that the store's soft drinks refrigerator which would turn off the cooling in the morning when there are no customers and lower it towards the evening when there are customers. This would be a small saving but in big scale it makes huge difference!
 
 The main idea of algorithm can be used either on a basic household level or even on a society level.
+
+The code was written in 36 hours. 
