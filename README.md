@@ -1,5 +1,7 @@
 # Junction 2022 Hackathon project
 
+Our algorithm optimizes energy usage and reduces energy consumption peaks.
+
 The app uses API from Fingrid (Finnish national electricity transmission grid operator) to forecast energy consumption and production. By analyzing that data algorithm finds best possible time period to use energy. It is the time period when production level is highest compared over consumption.
 
 The algorithm uses forecast provided by Fingrid on electricity consumption as a basis. By analyzing that data algorithm forecasts best possible time period to use energy. Also based on that data, the application tries to avoid electricity consumption peaks and equalize electricity consumption. Possibly, the application could also reduce electricity consumption due to the optimized charging time. In theory, the demand would level off, in which case the price of electricity would not fluctuate at all, but would remain constant.
