@@ -10,4 +10,4 @@ For example, the use of electricity is high, especially in the evenings. The alg
 
 The main idea of algorithm can be used either on a basic household level or even on a society level.
 
-The code was written in 36 hours. 
+The code was written in 36 hours.
